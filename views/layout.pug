@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        title= title
+        link(rel="stylesheet", href="static/css/style.css")
+    body
+        h1= message
+        .wrapper
+            .form-item
+                h4 新增
+                form(method="post")
+                    div
+                        input(type="text", name="todoname")
+                    button 提交
+            .form-item
+                h4 查询
+                form(method="get")
+                    div
+                        input(type="text", name="todoname")
+                    button 查询
+
+        .todo_list
+        
+        script(src="http://code.jquery.com/jquery.min.js")
+        script(src="static/scripts/main.js")

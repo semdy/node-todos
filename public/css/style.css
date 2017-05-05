@@ -1,0 +1,38 @@
+body{
+    background-color: #f0f0f0;
+}
+.wrapper{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    margin-bottom: 10px;
+}
+.form-item{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.form-item button{
+    margin-top: 5px;
+}
+.todo_list > div{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+}
+.todo_list > div.todo_item_done{
+    opacity: .5;
+}
+.todo_list > div > span{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.todo_list > div.todo_item_done button{
+    pointer-events: none;
+}
+.todo_list button{
+    margin-left: 5px;
+}
