@@ -29,8 +29,8 @@ function save(todoName, callback) {
 
 //模糊查询
 function getTodoListByTodoName(todoName, callback) {
-  var sql = 'SELECT * FROM todo_list WHERE todo_name like ' + '"%"' + connection.escape(todoName) + '"%"';
-  connection.query(sql, function (err, results, fields) {
+  var sql = 'SELECT * FROM todo_list WHERE todo_name like ?';
+  connection.query(sql, "%" + todoName + "%", function (err, results, fields) {
     if (err) console.error(err);
     callback(err, results, fields);
   });
@@ -55,8 +55,8 @@ function doneTodoItemById(uid, callback) {
 }
 
 function delTodoItemById(uid, callback) {
-  var sql = 'DELETE FROM todo_list WHERE uid = "' + uid + '"';
-  connection.query(sql, function (error, results, fields) {
+  var sql = 'DELETE FROM todo_list WHERE uid = ?';
+  connection.query(sql, uid, function (error, results, fields) {
     if (error) console.error(error);
     callback(error, results, fields);
   });
