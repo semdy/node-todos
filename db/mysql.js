@@ -1,5 +1,5 @@
 var mysql = require('mysql');
-var hash = require('../utils/hash');
+var getUuid = require('../utils/uid');
 
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -18,7 +18,7 @@ connection.connect(function (err) {
 
 function save(todoName, callback) {
   var post = {
-    uid: hash.MD5(Date.now()),
+    uid: getUuid(),
     todo_name: todoName
   };
   connection.query('INSERT INTO todo_list SET ?', post, function (err, results, fields) {

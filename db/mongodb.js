@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 //var ObjectId = Schema.Types.ObjectId;
-var hash = require("../utils/hash");
+var getUuid = require('../utils/uid');
 var db = mongoose.connect('mongodb://localhost:27017/node_todos');
 
 db.connection.on('error', console.error.bind(console, 'connection error:'));
@@ -30,7 +30,7 @@ function save(todoName, callback) {
     // });
 
     TodoListModel.create({
-        uid: hash.MD5(Date.now()),
+        uid: getUuid(),
         todo_name: todoName
     }, function (err) {
         if (err) {
